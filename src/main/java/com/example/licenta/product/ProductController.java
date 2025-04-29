@@ -2,10 +2,8 @@ package com.example.licenta.product;
 
 import com.example.licenta.product.model.Product;
 import com.example.licenta.product.model.ProductDTO;
-import com.example.licenta.product.services.CreateProductService;
-import com.example.licenta.product.services.DeleteProductService;
-import com.example.licenta.product.services.GetProductService;
-import com.example.licenta.product.services.UpdateProductService;
+import com.example.licenta.product.model.UpdateProductCommand;
+import com.example.licenta.product.services.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,39 +13,52 @@ import java.util.List;
 public class ProductController {
 
     private final CreateProductService createProductService;
-    private final GetProductService getProductService;
+    private final GetProductsService getProductsService;
     private final UpdateProductService updateProductService;
     private final DeleteProductService deleteProductService;
+    private final GetProductService getProductService;
 
 
     public ProductController(CreateProductService createProductService,
-                             GetProductService getProductService,
+                             GetProductsService getProductsService,
                              UpdateProductService updateProductService,
-                             DeleteProductService deleteProductService) {
+                             DeleteProductService deleteProductService,
+                             GetProductService getProductService) {
         this.createProductService = createProductService;
-        this.getProductService = getProductService;
+        this.getProductsService = getProductsService;
         this.updateProductService = updateProductService;
         this.deleteProductService = deleteProductService;
+        this.getProductService = getProductService;
     }
 
-    @PostMapping
+    @PostMapping("/product")
     public ResponseEntity<ProductDTO> createProduct(@RequestBody Product product){
         return createProductService.execute(product);
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public ResponseEntity<List<ProductDTO>> getProducts(){
-        return getProductService.execute(null);
+
+        return getProductsService.execute(null);
     }
 
-    @PutMapping
-    public ResponseEntity<String> updateProduct(){
-        return updateProductService.execute(null);
+    //new mapping for get by id
+    @GetMapping("/product/{id}")
+    public ResponseEntity<ProductDTO> getProductById(@PathVariable Integer id){
+        return getProductService.execute(id);
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> deleteProduct(){
-        return deleteProductService.execute(null);
+    @PutMapping("/product/{id}")
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Integer id, @RequestBody Product product){
+        //we need to pass both the id we want to update and the new product, but out method can receive maximum 1 input
+
+        return updateProductService.execute(new UpdateProductCommand(id,product));
+    }
+
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Integer id){
+
+         return deleteProductService.execute(id);
     }
 
 }
