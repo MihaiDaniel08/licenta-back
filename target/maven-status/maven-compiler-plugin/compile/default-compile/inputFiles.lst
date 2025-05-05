@@ -1,0 +1,15 @@
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/HelloController.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/LicentaApplication.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/api/controller/TestProtectedController.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/controller/AuthController.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/dto/LoginRequest.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/dto/LoginResponse.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/dto/RegisterRequest.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/security/JwtAuthenticationFilter.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/security/SecurityConfig.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/service/AuthService.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/service/JwtService.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/auth/service/UserDetailsServiceImpl.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/user/model/Role.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/user/model/User.java
+/Users/mihaiiorga/Documents/GitHub/licenta-back/src/main/java/com/backend/licenta/user/repository/UserRepository.java

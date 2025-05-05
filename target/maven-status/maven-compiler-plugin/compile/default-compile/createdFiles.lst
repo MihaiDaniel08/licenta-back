@@ -1,0 +1,15 @@
+com/backend/licenta/auth/dto/LoginResponse.class
+com/backend/licenta/auth/service/JwtService.class
+com/backend/licenta/LicentaApplication.class
+com/backend/licenta/auth/security/JwtAuthenticationFilter.class
+com/backend/licenta/auth/controller/AuthController.class
+com/backend/licenta/user/model/Role.class
+com/backend/licenta/api/controller/TestProtectedController.class
+com/backend/licenta/HelloController.class
+com/backend/licenta/auth/security/SecurityConfig.class
+com/backend/licenta/user/model/User.class
+com/backend/licenta/auth/dto/LoginRequest.class
+com/backend/licenta/auth/service/UserDetailsServiceImpl.class
+com/backend/licenta/auth/service/AuthService.class
+com/backend/licenta/user/repository/UserRepository.class
+com/backend/licenta/auth/dto/RegisterRequest.class
