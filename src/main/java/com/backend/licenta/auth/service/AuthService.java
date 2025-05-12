@@ -2,7 +2,6 @@ package com.backend.licenta.auth.service;
 
 import com.backend.licenta.auth.dto.LoginRequest;
 import com.backend.licenta.auth.dto.RegisterRequest;
-import com.backend.licenta.user.model.Role;
 import com.backend.licenta.user.model.User;
 import com.backend.licenta.user.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -44,10 +43,10 @@ public class AuthService {
         User user = new User();
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRole(Role.USER); // sau
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
 
         userRepository.save(user);
-
         return jwtService.generateToken(user);
     }
 }

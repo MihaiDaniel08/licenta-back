@@ -31,4 +31,15 @@ public class AuthController {
         String token = authService.register(request);
         return ResponseEntity.ok(new LoginResponse(token));
     }
+
+//    @PostMapping("/charts/generate")
+//    public ResponseEntity<?> generateChart(
+//            @RequestParam("file") MultipartFile file,
+//            @RequestParam("prompt") String prompt,
+//            @AuthenticationPrincipal User user) {
+//        // Procesare fișier + AI + returnare imagine / link / date
+//    }
+
+
+
 }
